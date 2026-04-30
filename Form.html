@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="post" autocomplete="off">
+        <label for="uname">Username:</label>
+        <input type="text" placeholder="enter name" name="username" id="uname"/>
+        <br />
+        <label for="mail">Email:</label>
+        <input type="email" placeholder="enter email" name="mail" id="mail"/>
+        <br />
+        <label for="">Gender:</label>
+        <input type="radio" name="gen" value="male"/>Male
+        <input type="radio" name="gen" value="female"/>Female
+        <input type="radio" name="gen" value="others"/>Others
+        <br />
+        <label for="pass">Password:</label>
+        <input type="password" placeholder="enter password" name="password" id="pass"/>
+        <br />
+        <label for="tele">Phone No:</label>
+        <input type="tel" placeholder="enter password" maxlength="10" name="phone" id="tele"/>
+        <br />
+        <label for="">Country:</label>
+        <input type="text" list="country">
+        <datalist id="country">
+            <option value="japan">Japan</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="russia">Russia</option>
+        </datalist>
+        <br/>
+        <label for="">Hobbies:</label>
+        <input type="checkbox" name="hobby" value="play"/>Playing
+        <input type="checkbox" name="hobby" value="eat"/>Eating
+        <input type="checkbox" name="hobby" value="sleep"/>Sleeping
+        <input type="checkbox" name="hobby" value="read"/>Reading
+        <br />
+        <label>Qualification:</label>
+        <select name="qual" id="">
+            <option value="Select">Select</option>
+            <option value="BE">BE</option>
+            <option value="Btech">Btech</option>
+            <option value="BCA">BCA</option>
+            <option value="BCOM">BCOM</option>
+        </select>
+        <br/>
+        <label for="">Pincode:</label>
+        <input type="number" name="pincode" placeholder="enter pincode"/>
+        <br/>
+        <label for="">Upload CV:</label>
+        <input type="file" name="resume"/>
+        <br/>
+        <label>Address:</label>
+        <textarea name="address" id="" cols="25" rows="4"></textarea>
+        <br/>
+        <label>DOB:</label>
+        <input type="date" name="date"/>
+        <br/>
+        <input type="image" src="" width="50" height="50" alt="">
+        <br/>
+        <label>Project Link:</label>
+        <input type="url"/>
+        <br/>
+        <label>Feedback:</label>
+        <input type="range" id="range" name="range"/>
+        <br/>
+        <br/>
+        <input type="submit"/>
+        <input type="reset"/>
+    </form>
+</body>
+
+</html>
