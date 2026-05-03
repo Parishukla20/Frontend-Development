@@ -1,0 +1,78 @@
+<!-- 
+1. anchor pseudo Class
+2. hover
+3. focus
+4. first-child 
+5. last-child
+6. only-child
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divBlock:hover{
+            background-color: yellow;
+            width: 400px;
+            border-radius: 100px;
+        }
+        /* container */
+        h1:hover{
+            color:darkmagenta;
+        }
+        /* focus property */
+        #inp:focus{
+            color:blue;
+            background-color: #999;
+            font-family: cursive;
+        }
+        ul li:first-child{
+            color: yellow;
+            background-color: pink;
+        }
+        ul li:nth-child(5){
+            color: yellow;
+            background-color: pink;
+        }
+        ul li:nth-child(even){
+            color: green;
+            background-color: aqua;
+        }
+        #parent h1:only-child{
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://google.com">Google</a>
+    <a href="https://zomato.com">Zomato</a>
+    <a id="demo" href="https://swiggy.com"></a>
+    <div id="divBlock">
+
+    </div>
+    <h1>Pseudo  Class Properties</h1>
+    <input type="text" id="inp"/>
+
+    <ul>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+        <li>list5</li>
+        <li>list6</li>
+        <li>list7</li>
+        <li>list8</li>
+        <li>list9</li>
+        <li>list10</li>
+    </ul>
+
+    <div id="parent">
+        <h1>Hello</h1>
+    </div>
+</body>
+</html>
