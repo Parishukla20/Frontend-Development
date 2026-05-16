@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Primitive Data Types</h1>
+    <script>
+        //String
+        let str = "Double quotes";
+        console.log(str);
+        console.log(typeof(str));
+        let str1 = 'Single quotes';
+        console.log(str1);
+        console.log(typeof(str1));
+        console.log("Using Backticks")
+        let res = `I am using ${str} and ${str1}`;
+        console.log(res);
+
+        //Number
+        const n2 = 100;
+        console.log(typeof(n2),n2)
+
+        //Null
+        let x = null;
+        console.log(x);
+
+        //Boolean
+        let istrue = false;
+        console.log(typeof(istrue));
+
+        //BigInt
+        let n =10n;
+        console.log(n,typeof(n))
+        let n1 = BigInt(100);
+        console.log(n1,typeof(n1))
+
+        //symbol
+        let x1 = Symbol(100);
+        console.log(x1,typeof(x1))
+        let x2 = Symbol(100);
+        console.log(x2)
+        console.log(x1 == x2)//false beacuse both addresses are different
+
+        //Undefined
+        let x3 = undefined;
+        console.log(typeof(x3),x3)
+
+    </script>
+</body>
+</html>
