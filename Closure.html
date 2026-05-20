@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user = "ExcelR";
+        function outermostfun(){
+            var x = 10;
+            var y = 20;
+            console.log(user)
+            console.log("print in parent function"+ x,y)
+
+            function innermost(){
+                const p = "Hello"
+                console.log(p)
+                console.log("print in child function:" +x);
+                console.log("print in child function" +y);
+            }
+            innermost();
+        }
+        outermostfun();
+    </script>
+</body>
+</html>
