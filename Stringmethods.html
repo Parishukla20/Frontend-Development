@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String Pre-defined Methods</h1>
+    <script>
+        //string length
+        let str = "Hello World";
+        console.log(str.length);  
+
+        //charAt
+        for(let i =0;i<=str.length;i++){
+            console.log(str.charAt(i))
+        }
+
+        //IndexOf
+        let i = str.indexOf("H")
+        console.log(i)
+
+        //lastIndexOf
+        let i1 = str.lastIndexOf("W");
+        console.log(i1)
+
+        //concat
+        let str1 = "Hello User"
+        let str2 = str.concat(str1);
+        console.log(str2)
+
+        //repeat
+        let count = str.repeat(5);
+        console.log(count)
+
+        //replace
+        let i2 = str1.replace("Hello","Hii")
+        console.log(i2)
+
+        //startsWith
+        console.log(str.startsWith("H"))//true
+        console.log(str.startsWith("h"))//false
+
+        //endsWith
+        console.log(str.endsWith("d"))//true
+        console.log(str.endsWith("h"))//false
+
+        //includes
+        console.log(str.includes("Hello"))//true
+        console.log(str.includes("Hii"))//false
+
+        //split
+        let split = str.split();
+        console.log(split)
+
+        let spli = str.split("");
+        console.log(spli)
+
+        let splt = str.split(" ");
+        console.log(splt)
+
+        //substring
+        let sub = str.substring(6);
+        console.log(sub)
+        let substr = str.substring(6,9);
+        console.log(substr)
+
+        //slice
+        let slice = str.slice(6)
+        console.log(slice);
+        let slc = str.slice(-3)
+        console.log(slc);
+
+        //toLowerCase
+        console.log(str.toLowerCase());
+
+        //toUpperCase
+        console.log(str.toUpperCase());
+
+        //trim
+        let str3 = "    VVVV   "
+        console.log(str3.trim()) //REMOVE SPACES
+
+        //charCodeAt
+        console.log(str.charCodeAt(0));
+        console.log(str.charCodeAt(3));
+
+        //match
+        let c = str.match("e");
+        console.log(c);
+
+        //search
+        console.log(str.search("W"));
+
+        //toString
+        let s = 100;
+        console.log(s,typeof(s))
+        let s1 = s.toString();
+        console.log(s1,typeof(s1))
+
+        //valueOf
+        let st = "ExelR";
+        console.log(st,typeof(st));
+        let st1 = st.valueOf();
+        console.log(st1,typeof(st1));
+
+    </script>
+</body>
+</html>
