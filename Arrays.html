@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays and its Predefined Methods</h1>
+    <script>
+        //Array
+        let arr = ["u1","u2","u3"];
+        console.log(arr);
+        //print element
+        console.log(arr[0]);
+        //print all element
+        for(let i =0;i<=arr.length;i++){
+            console.log(arr[i]);
+        }
+        //Array
+        let array = new Array(10,60,30,40,50);
+        console.log(array);
+        //homogenous array
+        let arr1 = [1,2,3,4];
+        console.log(arr1);
+        //hetrogenous array
+        let a = [10,true,"ExcelR",null,undefined,19.34];
+        console.log(a);
+
+        //Array Methods
+        let users = ["Vaishnavi","Syna","Shaik","Pooja","Syna","Pari"];
+        console.log(users);
+        //length
+        console.log(users.length)
+        //indexOf
+        let i = users.indexOf("Syna");
+        console.log(i)
+        //lastIndexOf
+        let i1 = users.lastIndexOf("Syna");
+        console.log(i1)
+        //concat
+        let cnct = users.concat(array,arr);
+        console.log(cnct);
+        //push
+        let push = users.push("Abhay");
+        console.log(users)
+        //pop
+        users.pop();
+        console.log(users)
+        //unshift(0th index)
+        users.unshift("Teja");
+        console.log(users)
+        //shift(0th index)
+        users.shift();
+        console.log(users);
+        //slice(part of the array)
+        let slice = users.slice(1,6);
+        console.log(slice);
+        let slc = users.slice(-3,-1);
+        console.log(slc);
+        //splice(remove part of a given array)
+        let splice = array.splice(3)
+        console.log(splice);
+        //sort
+        let sort = array.sort();
+        console.log(array);
+        //includes(return boolean)
+        console.log(array.includes(60))
+        //reverse
+        let ar = array.reverse();
+        console.log(array)
+        //join(return value in string type)
+        console.log(ar,typeof(ar));
+        let join = ar.join(" ");
+        console.log(join,typeof(join))
+        //flat(multi-dimen or nested to single dimen array)
+        let mul = [10,20,["a","b","c"],30,["d","e"],40,50];
+        console.log(mul)
+        console.log(mul.flat(4))
+        //some(boolean return when one element satisfy the test condition)
+        let n = [1,2,3,4,5,6,7,8,9];
+        let v = n.some((val)=> val > 0);
+        console.log(v);
+        let vv = n.some((val)=> val > 5);
+        console.log(vv);
+        //every(opp of some, return boolean if all element satisfy the test condition)
+        let v1 = n.every((val)=> val > 0);
+        console.log(v1);
+        let v2 = n.every((val)=> val > 1);
+        console.log(v2);
+        //find(if present then give same value othervise undefined)
+        let find = n.find((ele)=> ele ==8);
+        console.log(find)
+        let fd = n.find((ele)=> ele ==0);
+        console.log(fd)
+        //findIndex(if present then give index of same value othervise -1)
+        let findidx = n.findIndex((ele)=> ele ==8);
+        console.log(findidx);
+        let fdidx = n.findIndex((ele)=> ele ==0);
+        console.log(fdidx);
+        //map(higher order method that map the value to the element of an array and then return a new array)
+        console.log(n)
+        n.map((ele , index)=>{
+            console.log(ele);
+        })
+
+        n.map((ele , index)=>{
+            console.log(ele , index);
+            console.log(index);
+            console.log(ele+5)
+        })
+
+        let x = n.map((ele , i)=>{
+            return ele;
+        });
+
+        x.splice(2,5);
+        console.log(x);
+        console.log(n)
+
+        let x1 = n;
+        x1.splice(2,5);
+        console.log(x1);
+        console.log(n)
+
+        //forEach(same as map but it does not return a new array,if try to return then it will get undefined as an output)
+        n.forEach((ele , i)=>{
+            console.log(ele , i);
+        })
+        let x2 = n.forEach((ele , i)=>{
+            console.log(ele+5);
+            return ele; //undefined
+        })
+        console.log(x2)//undefined
+
+        //filter
+        console.log(n);
+       
+        n.filter((ele , i)=>{
+            console.log(ele , i);
+        })
+
+        let x3 = n.filter((ele , i)=> ele >= 5);
+        console.log(x3);
+
+        let y = n.map((ele , i)=> ele >=5);
+        console.log(y);
+
+        //reduce(take all the value one by one and then return a single value)
+        console.log(n)
+
+        let y1 = n.reduce((previousVal , currentVal)=>{
+            return previousVal+currentVal;
+        })
+        console.log(y1);
+
+        //Array.of(this take multiple return argument and return array as an output)
+        let arra = Array.of(10 , 20 , "hi" , true , 30);
+        console.log(arra);
+
+        //Array.isArray(use to check wheter the array is pure or not, it return true or false)
+        let a1 = [10,20,30,40,50];
+        console.log(Array.isArray(a1));//true
+
+        let st = "Hello";
+        let c = st.match('e');
+        console.log(c);
+        console.log(Array.isArray(c));
+
+        //Argument object
+        function demo(a , b){
+            console.log(a);
+            console.log(b);
+        }
+        demo(10,20,30,40,50);
+
+        function demo(a){
+            console.log(arguments);
+        }
+        demo(10,20,30,40,50);
+
+        function demo(a){
+            return arguments;
+        }
+        let p = demo(10,20,30,40,50);
+        console.log((p));
+        console.log(Array.isArray(p)); //false
+
+
+    </script>
+</body>
+</html>
