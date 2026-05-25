@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Objects</h1>
+    <script>
+        //using objects literals
+        let obj = {
+            name: "Abhay",
+            age: 22,
+            city: "Ben"
+        };
+        console.log(obj);
+
+        //using constructor way
+        let obj1 = new Object({
+            name: "Abhay",
+            age: 22,
+            city: "Ben"
+        });
+        console.log(obj1);
+
+        //Printing Values 
+        let userDetails = {
+            name: "PARI",
+            city: "Lucknow",
+            age: 22,
+            details: function () {
+                console.log(this);
+                return `my name is ${this.name} I live in ${this.city} My age is ${this.age}`;
+            }
+        };
+        console.log(userDetails);
+        console.log(userDetails.name);
+        console.log(userDetails.details());
+
+        console.log(userDetails["age"]);
+        console.log(userDetails["name"]);
+
+        //CRUD OPEARTION
+        let user = {
+            name: "Marwan",
+            age: 22,
+            city: "Mumbai"
+        };
+        //read
+        console.log(user);
+        //create new property
+        user.company = "Meta";
+        console.log(user);
+        user["salary"] = 50000;
+        console.log(user);
+        //update a property
+        user.age = 23;
+        console.log(user);
+        //delete
+        delete user.city;
+        console.log(user);
+
+        //create nested obj and access the nested properties using dot and bracket notations
+        let details = {
+            name: "Sam",
+            age: 24,
+            company: "Amazon",
+            desig: ["dev", "test"],
+            address: {
+                city: "Lucknow",
+                area: {
+                    area: "LalKuwan",
+                    street: "Gandhinagar"
+                }
+            }
+        };
+        console.log(details.name);
+        console.log(details.company);
+        console.log(details.desig[0]);
+        console.log(details.address.city);
+        console.log(details.address.area.street);
+
+        console.log(details["name"]);
+        console.log(details["desig"][1]);
+        console.log(details["address"]["area"]["street"]);
+
+        //create a array of objects and print the values from them instead of creating obj again and again
+        let stu = [
+            {
+                name:"A",
+                age:16,
+                city:"Ben"
+            },
+            {
+                name:"B",
+                age:16,
+                city:"Ten"
+            },
+            {
+                name:"C",
+                age:16,
+                city:"Den"
+            },
+            {
+                name:"D",
+                age:16,
+                city:"Hen"
+            },
+            {
+                name:"E",
+                age:16,
+                city:"Pen"
+            },
+        ];
+        console.log(stu[0].name);
+        stu.map((s,i)=>{
+            console.log(s.name);
+            console.log(s.city);
+        })
+
+
+    </script>
+</body>
+
+</html>
