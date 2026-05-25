@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>OBJECT METHODS</h1>
+    <script>
+        let products = {
+            mobile:"Realme",
+            laptop:"Lenovo",
+            bike:"R15",
+            car:"Mercedes",
+            watch:"Boat"
+        };
+        let val = Object.values(products);
+        console.log(val);
+        val.map(v=>{
+            console.log(v);
+        });
+
+        let pro ={
+            mobile:"realme",
+            lap:"HP",
+            watch:"Boat",
+            bike:"Bullet",
+            car:"Tata"
+        };
+        let key = Object.keys(pro);
+        console.log(key);
+
+        let entry = Object.entries(products);
+        console.log(entry);
+        entry.map(e=>{
+            console.log((e[0]+" "+e[1]));
+            console.log(1);
+        })
+
+        //Object.seal()
+        Object.seal(products);
+        products.tab = "ipad";
+        delete products.car; //not possible
+        products.laptop ="HP";
+        console.log(products);
+
+        //Object.isSealed()
+        let c = Object.isSealed(products);
+        console.log(c)
+
+        //Object.freeze()
+        Object.freeze(products);
+        products.tab= "ipad"; //not possible
+        delete products.car ; //not possible
+        products.laptop = "Dell"; //not possible
+        console.log(products);
+       
+        //Object.isFrozen()
+        console.log((Object.isFrozen(products)));
+
+        //Object.create()
+        // let obj = Object.create();
+        // console.log(obj); // show an error bject prototype may only be an object or null
+
+        let obj = Object.create(null);
+        obj.a = 1;
+        obj.b = 2;
+        obj.c = 3;
+        console.log(obj);
+
+        let refObj = {
+            a:10,
+            b:20
+        };
+        console.log(refObj.b);
+        console.log(refObj.p);//undefined
+
+        let obj1 = Object.create(refObj);
+        obj1.p = 100;
+        obj1.q = 200;
+        console.log(obj1);
+        console.log(obj1.p);
+        console.log(obj1.a);
+
+        //Object.assign(target,source)
+        let source = {
+            a:10,
+            b:20
+        }
+        let target = {};
+        console.log(target);
+
+        let result = Object.assign(target,source);
+        console.log(result);
+        console.log(target);
+
+        let s = {
+            a:10,
+            b:20,
+            c:30
+        }
+
+        let t = {
+            c:40,
+            d:50
+        }
+        console.log(s);
+        let merged1 = Object.assign(s,t);
+        console.log(s);
+
+        console.log(t);
+        let merged2 = Object.assign(t,s);
+        console.log(t);
+    </script>
+</body>
+</html>
