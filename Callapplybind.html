@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Call , Apply , Bind</h1>
+    <script>
+        let userDetails = {
+            fname: "Pari",
+            lname: "Shukla",
+            city: "Lko",
+            details: function () {
+                return `My name is ${this.fname} ${this.lname} and I live in ${this.city}`;
+            }
+        };
+        console.log(userDetails);
+        console.log(userDetails.details());
+
+
+        let user = {
+            fname: "Pari",
+            lname: "Shukla",
+            city: "Lko"
+        };
+        //call() will call the func and bind this keyword to the current object
+        function details(age , company) {
+            console.log(this)
+            return `My name is ${this.fname} ${this.lname} and I live in ${this.city}`;
+        };
+        details.call(user,22,"Amazon");
+
+        //apply() will calls the func and bind this keyword to the current object
+        function details1(age,company){
+            console.log(this);
+            console.log(`My name is ${this.fname} ${this.lname} and belongs to a city ${this.city} and age is ${age} and company is ${company}`);
+        };
+        details1.apply(user,[21,"Meta"]);
+
+        //bind() will call the func and binds this keyword to current object and return one more bound func instead of values
+         function details2(age,company){
+            console.log(this);
+            return (`My name is ${this.fname} ${lname} and belongs to a city ${this.city} and age is ${age} and company is ${company}`);
+         };
+         let x = details1.bind(user);
+         console.log(x(21,"ExcelR"));
+         console.log(x(24,"AiVariant"));
+
+    </script>
+</body>
+
+</html>
