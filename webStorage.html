@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>Username: </label>
+        <input type="text"/>
+        <label>Password: </label>
+        <input type="password"/>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+
+
+        //localStorage
+        console.log(localStorage);
+
+        localStorage.setItem("user1","Moulika");
+        localStorage.setItem("user2","Pooja");
+        localStorage.setItem("user3","Priyanshu");
+        localStorage.setItem("user4","Shubham");
+        localStorage.setItem("user5","Pari");
+        localStorage.setItem("user6","Syna");
+
+        let x = localStorage.getItem("user4");
+        console.log(x);
+
+        //localStorage.clear();
+
+        //sessionStorage
+        console.log(sessionStorage);
+        sessionStorage.setItem("user1","Moulika");
+        sessionStorage.setItem("user2","Pooja");
+        sessionStorage.setItem("user3","Priyanshu");
+        sessionStorage.setItem("user4","Shubham");
+        sessionStorage.setItem("user5","Pari");
+        sessionStorage.setItem("user6","Syna");
+
+        let y = sessionStorage.getItem("user6");
+        console.log(y);
+
+        console.log(sessionStorage.getItem("user7"));
+
+        sessionStorage.removeItem("user3");
+        //sessionStorage.clear();
+
+
+    </script>
+</body>
+</html>
