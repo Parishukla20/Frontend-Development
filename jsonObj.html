@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj ={
+            name:"Pari",
+            age:22,
+            city:"LKO"
+        };
+        console.log(obj);
+        
+        let jo = JSON.stringify(obj);
+        console.log(jo);
+        console.log(typeof(jo));
+        console.log(jo.name);
+
+        let p = JSON.parse(jo);
+        console.log(p);
+        console.log(typeof(p));
+        console.log(p.name);
+
+    </script>
+</body>
+</html>
