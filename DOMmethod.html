@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo">DOM Methods</h1>
+    <h1 id="demo">Header</h1>
+    <div class="items">Item 1</div>
+    <div class="items">Item 2</div>
+    <div class="items">Item 3</div>
+    <div class="items">Item 4</div>
+    <div class="items">Item 5</div>
+    <script>
+        let ele = document.getElementById("demo");
+        ele.style.color = "Blue";
+        ele.style.backgroundColor = "Grey";
+
+        let el = document.getElementsByClassName("items");
+        console.log(el);
+        console.log(Array.isArray(el));
+        el[0].style.color ="red";
+        el[0].style.backgroundColor="yellow";
+        el[1].style.color ="red";
+        el[1].style.backgroundColor="yellow";
+        el[2].style.color ="red";
+        el[2].style.backgroundColor="yellow";
+        el[3].style.color ="red";
+        el[3].style.backgroundColor="yellow";
+        el[4].style.color ="red";
+        el[4].style.backgroundColor="yellow";
+
+        [...el].map(e=>{
+            e.style.color="blue";
+            e.style.backgroundColor="aqua"
+        })
+        let ele1 = document.getElementsByClassName("item");
+        console.log(ele1);
+    </script>
+</body>
+</html>
