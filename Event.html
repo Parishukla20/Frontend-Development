@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="demo()">click</button>
+    <button ondblclick="dblClick()">Double click</button>
+    <div id="divBlock" onmouseenter="mouseOver()" onmouseleave="mouseLeave()">mouse event</div>
+    <input type="text" id="inp"/>
+
+    <script>
+        function demo()
+        {
+            console.log("button is clicked");
+            document.body.style.background="teal";
+            document.body.style.color="white";
+        }
+
+        function dblClick()
+        {
+            console.log("function executed only if button is double clicked")
+        }
+        function mouseOver()
+        {
+            document.body.style.backgroundColor="yellow";
+        }
+        function mouseLeave()
+        {
+            document.body.style.backgroundColor="violet";
+        }
+
+        let inp = document.getElementById("inp");
+        inp.addEventListener("keyup",()=>{
+            console.log("key up");
+        })
+        inp.addEventListener("keypress",()=>{
+            console.log("key press");
+        })
+    </script>
+</body>
+</html>
