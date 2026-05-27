@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1  id="dom">DOM Properties</h1>
+    <div id="demo">
+        <h1>Header</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.              Illum voluptate quis dolorum expedita laborum aliquid minus fugit saepe, voluptatem sed tenetur obcaecati temporibus? Eveniet sapiente ipsum illo labore magni molestias!
+        Ipsam quod laborum nobis vitae ipsa voluptates,             magnam obcaecati officia a excepturi at quis sed, amet placeat consectetur aperiam voluptatum quia harum, quidem provident assumenda omnis dicta? Vel, est perspiciatis.</p>
+    </div>
+    <div class="test">
+
+    </div>
+    <script>
+        let el = document.querySelector("#dom");
+        el.innerText = "Document object model property";
+        //read the content
+        let div = document.getElementById("demo");
+        console.log(div);
+        console.log(div.innerText);
+        console.log(div.innerHTML);
+        console.log(div.textContent);
+
+        //add the content into the element
+        let ele = document.querySelector(".test");
+        ele.innerText = "Lorem ";
+        ele.innerText = "<h1>lorem ipsum dolor iehdi dji</h1>";
+        ele.textContent = "lorem ipsum"
+        console.log(ele);
+        console.log(ele.textContent);
+
+    </script>
+</body>
+</html>
