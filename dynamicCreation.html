@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+        background-color:aquamarine;
+        color:orange;
+    }
+    </style>
+</head>
+<body>
+    <div id="demo" class="test" name="block">
+        <h1 id="h">Header</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <script>
+        let h1 = document.createElement("h1");
+        h1.innerText = "Dynamic creation of an element";
+        console.log(h1);
+        console.log(document.body);
+        document.body.append(h1);
+
+        let s = document.createElement("span");
+        s.innerText = "span tag created dynamically";
+        console.log(s);
+        document.body.append(s);
+
+        let a= document.createElement("a");
+        a.innerText="Google";
+
+        //first way to add attribute
+        //directly we can add with attribute name
+        a.href="https://google.com";
+        //second way : using set attribute name
+        a.setAttribute("href","https://google.com");
+        console.log(a);
+        document.body.append(a);
+
+        let image = document.createElement("img");
+        image.src = "";
+        console.log(image);
+        document.body.append(image);
+
+        //<div id="demo">
+        //<h1>Header</h1>
+        //<p>Lorem ipsum, elit. Doloremque, culpa mollitia iure nemo velit ratione fugit error obcaecati eligendi eveniet quia dolore maxime quo inventore. Cumque numquam incidunt ab consequuntur?</p>
+        //</div>
+
+        let div = document.createElement("div");
+        div.setAttribute("id","demo");
+        console.log(div);
+        
+        let h = document.createElement("h1");
+        h.innerText = "Header";
+        console.log(h);
+
+        let p = document.createElement("p");
+        p.innerText = "Lorem insum dolor sit me";
+        console.log(p);
+
+        document.body.append(div);
+        div.appendChild(h);
+        div.appendChild(p);
+
+        //ex getting attribute
+        let e = document.getElementById("demo");
+        console.log(e);
+        console.log(e.getAttribute("class"));
+        e.removeAttribute("name");
+        e.removeAttribute("class");
+        console.log(e);
+        console.log(e.hasAttribute("id"));//true
+        console.log(e.hasAttribute("class"));//true
+        console.log(e.hasAttribute("name"));//false
+   
+        //ex for remove element
+        let element = document.getElementById("demo");
+        let childEle = document.getElementById("h");
+        element.removeChild(childEle);
+        
+    </script>
+</body>
+</html>
