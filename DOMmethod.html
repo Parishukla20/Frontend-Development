@@ -13,11 +13,25 @@
     <div class="items">Item 3</div>
     <div class="items">Item 4</div>
     <div class="items">Item 5</div>
+
+    <div class="test">div01</div>
+    <div class="test">div02</div>
+    <div class="test">div03</div>
+
+    <span name="spanele">sapn 1</span>
+    <span name="spanele">sapn 2</span>
+    <span name="spanele">sapn 3</span>
+    <span name="spanele">sapn 4</span>
+    <span name="spanele">sapn 5</span>
+
+
     <script>
+        //getelememtbyId
         let ele = document.getElementById("demo");
         ele.style.color = "Blue";
         ele.style.backgroundColor = "Grey";
 
+        //getelememtbyClassName
         let el = document.getElementsByClassName("items");
         console.log(el);
         console.log(Array.isArray(el));
@@ -38,6 +52,33 @@
         })
         let ele1 = document.getElementsByClassName("item");
         console.log(ele1);
+
+        //getelememtbyTagName
+        let element = document.getElementsByTagName("div");
+        console.log(element);
+        [...element].map(e=>{
+            e.style.color="red";
+        })
+
+        //getelememtbyName
+        let e = document.getElementsByName("spanele");
+        console.log(e);
+        e.forEach(e=>{
+            e.style.backgroundColor="Orange";
+            e.style.margin="10px";
+            e.style.color="blue";
+        })
+
+        //getelementByQuerySelector
+        let elem = document.querySelector("#demo");
+        console.log(elem);
+
+        let elem1 = document.querySelector(".test");
+        console.log(elem1);
+
+        //getelementByQuerySelectorAll
+        let elemen = document.querySelectorAll(".test");
+        console.log(elemen);
     </script>
 </body>
 </html>
