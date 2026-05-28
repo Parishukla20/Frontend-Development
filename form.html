@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="un" />
+        <br><br>
+        <input type="email" id="mail" />
+        <br><br>
+        <input type="password" id="pass" />
+        <br><br>
+        <input type="phone" id="phone" />
+        <br><br>
+        Gender: <input type="radio" name="gen" value="male" />Male
+        <input type="radio" name="gen" value="female" />Female
+        <input type="radio" name="gen" value="others" />Others
+        <br><br>
+        Course: <input type="checkbox" name="cou" value="Java" />Java
+        <input type="checkbox" name="cou" value="Javascript" />JavaScript
+        <input type="checkbox" name="cou" value="Python" />Python
+        <input type="sumit" />
+
+    </form>
+    <!-- onchange event example -->
+    <input type="text" placeholder="enter value" id="demo" />
+    <script>
+        //onchange event ex
+        let inp = document.getElementById("demo");
+        inp.addEventListener("change", (event) => {
+            console.log(event.target.value);
+        })
+        //submit event ex
+        let form = document.querySelector("form");
+        let uname = document.getElementById("un");
+        let mail = document.getElementById("mail");
+        let password = document.getElementById("pass");
+        let phoneNo = document.getElementById("phone");
+
+        let gender = "";
+        [...gender].map((ele) => {
+            ele.addEventListener("click", (event) => {
+                console.log(event.target.checked);
+                console.log(event.target.value);
+                if (event.target.checked == true) {
+                    gen = event.target.value;
+                }
+            });
+        });
+
+        let courseVal = [];
+        [...course].map(c=>{
+            c.addEventListener("click",event=>{
+                if(event.target.checked == true)
+            {
+                courseVal.push(event.target.value);
+            }
+            })
+        })
+        form.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            console.log(event);
+            let un = username.value;
+            let ue = mail.value;
+            let ps = password.value;
+            let ph = phoneNo.value;
+            console.log("Form Submitted");
+            console.log({username:un,email:ue,password:ps,phoneNo:ph});
+        });
+    </script>
+</body>
+
+</html>
