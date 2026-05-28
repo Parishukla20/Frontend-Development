@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gp{
+            width: 400px;
+            height: 400px;
+            background-color: green;
+        }
+        .p{
+            width: 350px;
+            height: 350px;
+            background-color: tomato;
+        }
+        .c{
+            width: 200px;
+            height: 200px;
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <div class="gp">grand parent
+        <div class="p">parent
+            <div class="c">Child
+            </div>
+        </div>
+    </div>
+    <script>
+        let gp = document.querySelector("gp");
+        let p = document.querySelector("p");
+        let c = document.querySelector(".c");
+
+        //bubbling phase
+        gp.addEventListener("click",event=>{
+            event.stopPropagation();
+            console.log("Grand parent clicked");
+        })
+        p.addEventListener("click",event=>{
+            event.stopPropagation();
+            console.log("Parent clicked");
+        })
+        c.addEventListener("click",event=>{
+            event.stopPropagation();
+            console.log("Child Clicked");
+        })
+
+        //capturing phase
+        gp.addEventListener("click",event=>{
+            event.stopPropagation();
+            console.log("Grand parent clicked");
+        },{capture:true})
+        p.addEventListener("click",event=>{
+            event.stopPropagation();
+            console.log("parent clicked");
+        },{capture:true})
+        c.addEventListener("click",event=>{
+            event.stopPropagation();
+            console.log("Child clicked");
+        },{capture:true})
+    </script>
+</body>
+</html>
