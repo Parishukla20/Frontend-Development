@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promise</h1>
+    <script>
+
+        //promise states
+        let p1 = new Promise((resolve , reject)=>{
+            //"pending"
+        });
+        console.log(p1);
+
+        let p2 =  new Promise((resolve , reject)=>{
+            resolve("promise completed successfully");
+        });
+
+        let p3 = new Promise((resolve , reject)=>{
+            reject("promise is rejected");
+        });
+        console.log(p3);
+
+        //promise instance method
+        let p4 = new Promise((res,rej)=>{
+
+        });
+        console.log(p4);
+        p4.then((res)=>console.log(res))
+
+        let p5 = new Promise ((res,rej)=>{
+            res("promise is resolved")
+        });
+        console.log(p5);
+        p5.then((res)=>console.log(res));
+        p5.catch((err)=>console.log(err));
+        p5.finally(()=>console.log("finally will print for both"));
+
+        let p6 = new Promise((res,rej)=>{
+            rej("Promise is rejected")
+        });
+        console.log(p6);
+        p6.then((res)=>console.log(res));
+        p6.catch((err)=>console.log(err));
+        p6.finally(()=>console.log("finally will print for both"));
+
+
+
+
+
+
+        function product(callback) {
+           return new Promise((res,rej)=>{
+            setTimeout(()=>{
+                console.log("product selected");
+                res();
+            },1000);
+           });
+        }
+
+        function addtocart(callback) {
+            return new Promise((res,rej)=>{
+                setTimeout(() => {
+                console.log("product is added to cart");
+                res();
+            }, 1000);
+            });
+        }
+
+        function buyProduct(callback) {
+           return new Promise((res,rej)=>{
+             setTimeout(() => {
+                console.log("product buy");
+                res();
+            }, 1000);
+           });
+        }
+
+        function address(callback) {
+           return new Promise((res,rej)=>{
+             setTimeout(() => {
+                console.log("provide address");
+                res();
+            }, 1000);
+           });
+        }
+
+        function payment(callback) {
+            return new Promise((res,rej)=>{
+                setTimeout(() => {
+                console.log("make a payment");
+                rej("payment failed");
+            }, 1000);
+            });
+        }
+
+        function orderPlaced(callback) {
+           return new Promise((res,rej)=>{
+             setTimeout(() => {
+                console.log("order places successfully");
+                res();
+            }, 1000);
+           });
+        }
+
+
+
+        //Static Methods of Promise
+        //Promise.all()
+        //first example
+        let pr1 = new Promise((res,rej)=>{
+            res("pr1 resolved");
+        })
+        let pr2 = new Promise((res,rej)=>{
+            res("pr2 resolved");
+        })
+        let pr3 = new Promise((res,rej)=>{
+            res("pr3 resolved");
+        })
+        Promise.all([pr1,pr2,pr3])
+        .then((res)=>console.log(res))
+        .catch((err)=>console.log(err))
+        //second example
+        let pro1 = new Promise((res,rej)=>{
+            res("pro1 resolved");
+        })
+        let pro2 = new Promise((res,rej)=>{
+            rej("pro2 rejected");
+        })
+        let pro3 = new Promise((res,rej)=>{
+            res("pro3 resolved");
+        });
+        Promise.all([pro1,pro2,pro3])
+       .then((res)=>console.log(res))
+        .catch((err)=>console.log(err))
+
+        //Promise.any()
+        let prom1 = new Promise((res,rej)=>{
+            rej("prom1 rejected");
+        })
+        let prom2 = new Promise((res,rej)=>{
+            rej("prom2 rejected");
+        })
+        let prom3 = new Promise((res,rej)=>{
+            rej("prom3 rejected");
+        });
+        Promise.any([prom1,prom2,prom3])
+        .then((res)=>console.log(res))
+        .catch((err)=>console.log(err))
+
+        //Promise.race()
+        let pt1 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                rej("pt1 rejected");
+            }, 500);
+        });
+        let pt2 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res("pt2 resolved");
+            }, 200);
+        });
+        let pt3 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res("pt3 resvolved");
+            }, 500);
+        });
+        Promise.race([ps1,ps2,ps3])
+        .then((res)=>console.log(res))
+        .catch((err)=>console.log(err));
+
+        //Promise.allSettled()
+        let ps1 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                rej("ps1 rejected");
+            }, 500);
+        });
+        let ps2 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res("ps2 resolved");
+            }, 200);
+        });
+        let ps3 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res("ps3 resolved");
+            }, 2500);
+        });
+        Promise.allSettled([ps1,ps2,ps3])
+        .then((res)=>console.log(res))
+        .catch((err)=>console.log(err));
+
+        //Fetching
+        function fetchUser()
+        {
+            let apiURL = "https://jsonplaceholder.typicode.com/users";
+            let result = fetch(apiURL);
+            console.log(result);
+            result
+            .then((res)=>res.json().then(data=>{
+                console.log(data);
+                let div = document.createElement("div");
+                [...data].map(val=>{
+                    console.log(val);
+                    console.log(val.name);
+                    console.log(val.email);
+                    div.innerHTML += `
+                    <h2>${val.name}</h2>
+                    <p>${val.email}</p>`
+                })
+                document.body.append(div);
+            }))
+            .catch((err)=>console.log(err))
+        }
+        fetchUser();
+    </script>
+</body>
+</html>
