@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //settimeout
+        window.setTimeout(()=>{
+            console.log("hello");
+        },5000);
+        setTimeout(()=>{
+            console.log("print after specified timer is finished");
+        },4500);
+        console.log(10);
+        console.log(20);
+        setTimeout(()=>{
+            console.log(30);
+        });
+        console.log(40);
+        console.log(50);
+
+        //setinterval
+        let count =0;
+        setInterval(()=>{
+            count++;
+            console.log(count);
+            console.log("set interval called")
+        },1000);
+
+        setInterval(()=>{
+            document.write("Asynchronous");
+        },500);
+    </script>
+</body>
+</html>
