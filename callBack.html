@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //callback
+        function product(callback) {
+            setTimeout(() => {
+                console.log("search product and select");
+                callback();
+            }, 1000);
+        }
+
+        function addtocart(callback) {
+            setTimeout(() => {
+                console.log("product is added to cart");
+                callback();
+            }, 1000);
+        }
+
+        function buyProduct(callback) {
+            setTimeout(() => {
+                console.log("product buy")
+            }, 1000);
+        }
+
+        function address(callback) {
+            setTimeout(() => {
+                console.log("provide address")
+            }, 1000);
+        }
+
+        function payment(callback) {
+            setTimeout(() => {
+                console.log("make a payment")
+            }, 1000);
+        }
+
+        function orderPlaced(callback) {
+            setTimeout(() => {
+                console.log("order places successfully")
+            }, 1000);
+        }
+
+        function shipped(callback) {
+            setTimeout(() => {
+                console.log("product shipped from the store")
+            }, 1000);
+        }
+
+        function delivered(callback) {
+            setTimeout(() => {
+                console.log("product delivered successfully")
+            }, 1000);
+        }
+
+        product(()=>{
+            addtocart(()=>{
+                buyProduct(()=>{
+                    address(()=>{
+                        payment(()=>{
+                            orderPlaced(()=>{
+                                shipped(()=>{
+                                    delivered(()=>{
+                                        console.log("order review")
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
